@@ -1,15 +1,15 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
 
 const activities = [
-  { name: 'WAKE UP', time: '06:30', frequency: 'EVERY DAY', color: 0xff6138 },
-  { name: 'TAKE A SHOWER', time: '06:40', frequency: 'ALWAYS', color: 0x5ab9ff },
-  { name: 'BREAKFAST', time: '07:00', frequency: 'USUALLY', color: 0xffc857 },
-  { name: 'GO TO SCHOOL', time: '07:30', frequency: 'MON — FRI', color: 0xa98bff },
+  { name: 'WAKE UP', time: '06:00', frequency: 'EVERY DAY', color: 0xff6138 },
+  { name: 'TAKE A SHOWER', time: '06:10', frequency: 'ALWAYS', color: 0x5ab9ff },
+  { name: 'BREAKFAST', time: '06:30', frequency: 'USUALLY', color: 0xffc857 },
+  { name: 'GO TO SCHOOL', time: '07:00', frequency: 'MON — FRI', color: 0xa98bff },
   { name: 'HAVE LUNCH', time: '12:30', frequency: 'EVERY DAY', color: 0x62d89a },
-  { name: 'DO HOMEWORK', time: '16:00', frequency: 'USUALLY', color: 0xff7eb6 },
-  { name: 'WORK OUT', time: '18:00', frequency: '3× A WEEK', color: 0xff4b26 },
+  { name: 'DO HOMEWORK', time: '18:00', frequency: 'USUALLY', color: 0xff7eb6 },
+  { name: 'WORK OUT', time: '19:00', frequency: '3× A WEEK', color: 0xff4b26 },
   { name: 'HAVE DINNER', time: '20:00', frequency: 'EVERY DAY', color: 0xf2a65a },
-  { name: 'GO TO SLEEP', time: '23:00', frequency: 'ALWAYS', color: 0x6f78d8 }
+  { name: 'GO TO SLEEP', time: '21:00', frequency: 'ALWAYS', color: 0x6f78d8 }
 ];
 
 const experience = document.querySelector('#experience3d');
@@ -175,7 +175,7 @@ function createRoomScene() {
   const pillow2 = box([1.1, 0.27, 1.15], [-5.35, 1.37, -1.75], 0xf2eee8);
   root.add(bedBase, mattress, blanket, pillow1, pillow2);
 
-  const desk = interactiveObject(box([4.5, 0.24, 1.8], [3.8, 2.05, -4.25], 0x8b5a38), { name: 'DO HOMEWORK', time: '16:00', frequency: 'USUALLY', hint: 'FOCUS TIME AT MY DESK' });
+  const desk = interactiveObject(box([4.5, 0.24, 1.8], [3.8, 2.05, -4.25], 0x8b5a38), { name: 'DO HOMEWORK', time: '18:00', frequency: 'USUALLY', hint: 'FOCUS TIME AT MY DESK' });
   const leg1 = box([0.25, 2, 0.25], [2.1, 1, -4.25], 0x4a3021);
   const leg2 = box([0.25, 2, 0.25], [5.5, 1, -4.25], 0x4a3021);
   const laptopBase = box([1.8, 0.08, 1.15], [3.9, 2.23, -4.15], 0x34363b, 0.25);
