@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Orbit — Routine Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="loader-orbit"><span></span><i></i></div>
+    <div class="loader-copy"><b>MY DAILY ORBIT</b><em id="loadPercent">00</em></div>
+    <div class="loader-line"><span id="loadLine"></span></div>
+  </div>
+  <div class="page-transition" id="pageTransition"><span></span></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Home"><span class="brand-dot"></span>MY DAILY ORBIT</a>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#home">HOME</a>
+      <a class="nav-link" href="#day">MY DAY</a>
+      <a class="nav-link" href="#chores">CHORES</a>
+      <a class="nav-link" href="#leisure">LEISURE</a>
+    </nav>
+    <div class="top-actions">
+      <div class="live-clock"><span>LOCAL TIME</span><b id="liveClock">00:00:00</b></div>
+      <button class="icon-button" id="soundToggle" type="button" aria-label="Toggle ambient sound" title="Ambient sound"><span class="sound-bars"><i></i><i></i><i></i></span></button>
+      <button class="icon-button" id="presentToggle" type="button" aria-label="Start presentation" title="Presentation mode">⛶</button>
+      <div class="slide-count"><span id="currentSlide">01</span> / 04</div>
+    </div>
+  </header>
+  <div class="progress-rail"><span id="progressBar"></span></div>
+  <aside class="chapter-dots" aria-label="Presentation chapters">
+    <a class="active" href="#home"><span>INTRO</span></a>
+    <a href="#day"><span>DAY</span></a>
+    <a href="#chores"><span>CHORES</span></a>
+    <a href="#leisure"><span>LEISURE</span></a>
+  </aside>
+
+  <main>
+    <section id="home" class="panel hero" data-slide="01">
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+      <div class="sun-disc"></div>
+      <div class="hero-kicker reveal">PROJECT PRESENTATION <span></span> ENGLISH</div>
+      <h1 class="hero-title reveal">MY DAILY<br><em>ORBIT</em></h1>
+      <p class="hero-sub reveal">A VISUAL JOURNEY THROUGH<br>MY ROUTINE, RESPONSIBILITIES<br>&amp; FAVORITE MOMENTS.</p>
+      <div class="hero-meta reveal">
+        <span>SCROLL TO EXPLORE</span>
+        <i></i>
+        <span>2026</span>
+      </div>
+      <div class="key-hint reveal"><kbd>SPACE</kbd><span>NEXT CHAPTER</span><kbd>F</kbd><span>FULLSCREEN</span></div>
+      <button class="enter-3d reveal" id="enter3d" type="button"><span>ENTER 3D EXPERIENCE</span><i>↗</i></button>
+      <div class="scroll-cue" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section id="day" class="panel day-section" data-slide="02">
+      <div class="section-head">
+        <div><span class="eyebrow">01 — ROUTINE</span><h2>MY TYPICAL <i>DAY</i></h2></div>
+        <p>FROM SUNRISE<br>TO LIGHTS OUT</p>
+      </div>
+      <div class="timeline" id="dayGrid">
+        <article class="day-card large reveal" style="--image:url('img/cand/wake-up/1.jpg')">
+          <div class="card-top"><span>01</span><b>EVERY DAY</b></div><div class="card-copy"><time>06:00</time><h3>WAKE UP</h3></div>
+        </article>
+        <article class="day-card reveal" style="--image:url('img/cand/shower/4.jpg')">
+          <div class="card-top"><span>02</span><b>ALWAYS</b></div><div class="card-copy"><time>06:10</time><h3>TAKE A SHOWER</h3></div>
+        </article>
+        <article class="day-card reveal" style="--image:url('img/cand/breakfast/4.jpg')">
+          <div class="card-top"><span>03</span><b>USUALLY</b></div><div class="card-copy"><time>06:30</time><h3>HAVE BREAKFAST</h3></div>
+        </article>
+        <article class="day-card wide reveal" style="--image:url('img/cand2/school/5.jpg')">
+          <div class="card-top"><span>04</span><b>MONDAY — FRIDAY</b></div><div class="card-copy"><time>07:00</time><h3>GO TO SCHOOL</h3></div>
+        </article>
+        <article class="day-card reveal" style="--image:url('img/cand/lunch/2.jpg')">
+          <div class="card-top"><span>05</span><b>EVERY DAY</b></div><div class="card-copy"><time>12:30</time><h3>HAVE LUNCH</h3></div>
+        </article>
+        <article class="day-card reveal" style="--image:url('img/cand2/homework/1.jpg')">
+          <div class="card-top"><span>06</span><b>USUALLY</b></div><div class="card-copy"><time>18:00</time><h3>DO HOMEWORK</h3></div>
+        </article>
+        <article class="day-card wide reveal" style="--image:url('img/cand/gym/1.jpg')">
+          <div class="card-top"><span>07</span><b>3× A WEEK</b></div><div class="card-copy"><time>19:00</time><h3>WORK OUT</h3></div>
+        </article>
+        <article class="day-card reveal" style="--image:url('img/cand/dinner/4.jpg')">
+          <div class="card-top"><span>08</span><b>EVERY DAY</b></div><div class="card-copy"><time>20:00</time><h3>HAVE DINNER</h3></div>
+        </article>
+        <article class="day-card large reveal" style="--image:url('img/cand2/sleep/2.jpg')">
+          <div class="card-top"><span>09</span><b>ALWAYS</b></div><div class="card-copy"><time>21:00</time><h3>GO TO SLEEP</h3></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="chores" class="panel chores-section" data-slide="03">
+      <div class="section-head light">
+        <div><span class="eyebrow">02 — RESPONSIBILITIES</span><h2>HOUSEHOLD <i>CHORES</i></h2></div>
+        <p>SMALL TASKS.<br>BIG DIFFERENCE.</p>
+      </div>
+      <div class="chores-layout">
+        <div class="chore-feature reveal" style="--image:url('img/cand/dishes/5.jpg')">
+          <div class="feature-number">01</div>
+          <div class="feature-copy"><span>EVERY DAY</span><h3>WASH THE<br>DISHES</h3></div>
+          <div class="frequency-ring"><strong>7×</strong><small>WEEK</small></div>
+        </div>
+        <div class="chore-list">
+          <article class="chore-row reveal"><span>02</span><div class="thumb" style="--image:url('img/cand2/tidy/1.jpg')"></div><h3>SWEEP<br>THE FLOOR</h3><b>3× A WEEK</b></article>
+          <article class="chore-row reveal"><span>03</span><div class="thumb" style="--image:url('img/cand/bed-make/1.jpg')"></div><h3>MAKE<br>MY BED</h3><b>ALWAYS</b></article>
+          <article class="chore-row reveal"><span>04</span><div class="thumb" style="--image:url('img/cand/laundry/5.jpg')"></div><h3>DO THE<br>LAUNDRY</h3><b>TWICE A WEEK</b></article>
+          <article class="chore-row reveal"><span>05</span><div class="thumb" style="--image:url('img/cand/trash/5.jpg')"></div><h3>TAKE OUT<br>THE TRASH</h3><b>THREE TIMES A WEEK</b></article>
+          <article class="chore-row reveal"><span>06</span><div class="thumb" style="--image:url('img/cand/iron/3.jpg')"></div><h3>IRON<br>CLOTHES</h3><b>NEVER</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leisure" class="panel leisure-section" data-slide="04">
+      <div class="section-head">
+        <div><span class="eyebrow">03 — FREE TIME</span><h2>MY FAVORITE <i>MOMENTS</i></h2></div>
+        <p>OFF THE CLOCK.<br>FULLY ALIVE.</p>
+      </div>
+      <div class="leisure-grid">
+        <article class="leisure-card tall reveal" style="--image:url('img/cand/music/5.jpg')"><div class="leisure-index">01</div><div class="leisure-copy"><b>EVERY DAY</b><h3>LISTEN TO<br>MUSIC</h3></div></article>
+        <article class="leisure-card reveal" style="--image:url('img/cand/games/5.jpg')"><div class="leisure-index">02</div><div class="leisure-copy"><b>USUALLY</b><h3>PLAY VIDEO<br>GAMES</h3></div></article>
+        <article class="quote-card reveal"><span>MY TIME,</span><strong>MY<br>ENERGY.</strong><i>∞</i></article>
+        <article class="leisure-card wide reveal" style="--image:url('img/cand/friends/1.jpg')"><div class="leisure-index">03</div><div class="leisure-copy"><b>ON WEEKENDS</b><h3>HANG OUT WITH<br>FRIENDS</h3></div></article>
+        <article class="leisure-card reveal" style="--image:url('img/cand2/football/1.jpg')"><div class="leisure-index">04</div><div class="leisure-copy"><b>TWICE  A WEEK</b><h3>PLAY<br>SOCCER</h3></div></article>
+        <article class="leisure-card reveal" style="--image:url('img/cand/reading/3.jpg')"><div class="leisure-index">05</div><div class="leisure-copy"><b>SOMETIMES</b><h3>READ<br>BOOKS</h3></div></article>
+        <article class="leisure-card wide reveal" style="--image:url('img/cand/cinema/3.jpg')"><div class="leisure-index">06</div><div class="leisure-copy"><b>ONCE A MONTH</b><h3>GO TO THE<br>MOVIES</h3></div></article>
+        <article class="leisure-card reveal" style="--image:url('img/cand/travel/2.jpg')"><div class="leisure-index">07</div><div class="leisure-copy"><b>ON VACATION</b><h3>TRAVEL</h3></div></article>
+      </div>
+      <footer>
+        <div><span>THANK YOU FOR</span><strong>APRESENTATION IN ENGLISH.</strong></div>
+        <a href="#home">BACK TO TOP ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <div class="experience-3d" id="experience3d" aria-hidden="true">
+    <canvas id="threeCanvas"></canvas>
+    <div class="three-vignette"></div>
+    <header class="three-header">
+      <div class="three-brand"><span></span>MY DAILY ORBIT <b>/ 3D LAB</b></div>
+      <div class="three-modes" role="tablist">
+        <button class="active" data-mode="orbit" type="button"><i>01</i> ORBIT</button>
+        <button data-mode="room" type="button"><i>02</i> MY ROOM</button>
+        <button data-mode="timeline" type="button"><i>03</i> TIME TRAVEL</button>
+      </div>
+      <button class="close-3d" id="close3d" type="button" aria-label="Close 3D experience">CLOSE <span>×</span></button>
+    </header>
+    <div class="three-intro" id="threeIntro">
+      <span id="threeChapter">01 — MY UNIVERSE</span>
+      <h2 id="threeTitle">EVERY DAY<br><i>IN ORBIT.</i></h2>
+      <p id="threeDescription">DRAG TO ROTATE · SCROLL TO ZOOM<br>CLICK THE ORBITING MOMENTS</p>
+    </div>
+    <div class="object-card" id="objectCard">
+      <button type="button" aria-label="Close details">×</button>
+      <span id="objectFrequency">EVERY DAY</span>
+      <b id="objectTime">06:30</b>
+      <h3 id="objectName">WAKE UP</h3>
+      <p id="objectHint">FIRST MOMENT OF MY DAILY ORBIT</p>
+    </div>
+    <div class="three-footer"><span id="modeInstruction">DRAG / EXPLORE</span><div><i></i> WEBGL EXPERIENCE</div><b id="threeCounter">01 / 09</b></div>
+    <div class="three-loader" id="threeLoader"><span></span><b>BUILDING YOUR UNIVERSE</b></div>
+  </div>
+  <div class="present-help" id="presentHelp"><span>← →</span> NAVIGATE <span>ESC</span> EXIT</div>
+  <script src="script.js"></script>
+  <script type="module" src="three-experience.js"></script>
+</body>
+</html>
